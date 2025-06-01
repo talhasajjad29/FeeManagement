@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Add Student{% endblock %}
+<!-- <h2>Add Student</h2>
+
+<form method="post">
+    {% csrf_token %}
+    Student Name: <input type="text" name="name"><br>
+
+    Class: <input type="text" name="student_class"><br>
+
+    Total Tuition Fee: <input type="number" name="total_fee"><br>
+
+    <button type="submit">Add Student</button>
+</form>
+<p>Back to <a href="">Home page</a></p> -->
+
+
+{% block content %}
+{% include 'top_nav_bar.html' %}
+<div class="container p-5">
+
+    <h2>Add New Student</h2>
+    <!-- <form method="post" class="p-5">
+        {% csrf_token %}
+        <div class="row mb-3 ">
+            <label class="col-sm-2 col-form-label">Student Name: </label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="name">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Class:</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="student_class">
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Total Tuition Fee:</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="total_fee">
+            </div>
+        </div>
+        <button class="form-control btn-primary" type="submit">Add Student</button>
+    </form> -->
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save Student</button>
+</form>
+
+    <p>Back to <a href="">Home page</a></p>
+
+</div>
+{% endblock %}

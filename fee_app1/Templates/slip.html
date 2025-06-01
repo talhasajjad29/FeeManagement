@@ -1,0 +1,8 @@
+<h2>Fee Slip</h2>
+<p>Name: {{ student.name }}</p>
+<p>Class: {{ student.student_class }}</p>
+<p>Total Fee: {{ student.total_fee }}</p>
+<p>Submitted Fee: {{ submitted }}</p>
+<p>Pending Fee: {{ pending }}</p>
+<p>Date: {{ student.feesubmission_set.last.date }}</p>
+<p>Slip #: {{ student.id }}{{ student.feesubmission_set.count }}</p>

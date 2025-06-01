@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="GET" action="{% url 'home' %}">
+    <input type="text" name="search" placeholder="Search by student name..." value="{{ request.GET.search }}">
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Total Fee</th>
+        <th>Submitted</th>
+        <th>Pending</th>
+        <th>Unpaid</th>
+        <th>Slip</th>
+    </tr>
+    {% for entry in data %}
+    <tr>
+        <td>{{ entry.student.name }}</td>
+        <td>{{ entry.student.student_class }}</td>
+        <td>{{ entry.student.total_fee }}</td>
+        <td>{{ entry.submitted }}</td>
+        <td>{{ entry.pending }}</td>
+        <td>{{ entry.unpaid }}</td>
+        <td><a href="{% url 'generate_slip' entry.student.id %}">Generate Slip</a></td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="7">No records found.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

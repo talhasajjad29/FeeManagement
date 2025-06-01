@@ -1,0 +1,26 @@
+<!-- templates/base.html -->
+  {% load bootstrap5 %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SFMS- {% block title %}
+    {% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { margin-right: 10px; padding: 5px 10px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .header { margin-bottom: 20px; }
+    </style>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+<body>
+
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
